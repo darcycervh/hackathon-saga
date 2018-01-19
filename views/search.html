@@ -12,7 +12,7 @@
   <!-- font awesome icons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- css de la vista search -->
-  <link rel="stylesheet" href="../css/collection.css">
+  <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body class="color-text-body">
    <!-- Barra de navegación -->
@@ -74,22 +74,33 @@
   <!-- Input de búsqueda de películas de saga -->
   <div class="container form-nav">
     <div class="input-group">
-      <a href="search.html"><button  class="btn-save">Busca tu saga</button></a>
+      <input list="list-movies" name="list-movies" class="col-xs-12">
+      <datalist id="list-movies" >
+       <!--- <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">-->
+      </datalist>
     </div>
   </div>
   <hr class="bg-dark">
   <!-- sección del perfil -->
   <div class="container">
-    <h4 class="white">Mis Colecciones</h4>
+    <div id="results" class="row col-xs-12 center-block results text-center">
+      
+
+    </div>
   </div>
-  <!-- Bootstrap js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>  
-  <!-- adjuntando js de la vista search -->
-  <script src="../js/profile.js"></script>
+  <!-- Js de firebase-->
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script type="text/javascript" src="../js/connect.js"></script>
+<!-- Js de Jquery-->
+<script type="text/javascript" src="../vendors/js/jquery-3.2.1.min.js"></script>
+<!-- Js de bootstrap-->
+<script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+<!-- Js para la página-->
+<script type="text/javascript" src="../js/search.js"></script>
+
 </body>
 </html>
