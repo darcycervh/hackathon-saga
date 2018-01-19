@@ -31,20 +31,21 @@ $(document).ready(function() {
     console.log(userToSave);
     firebase.database().ref('users/' + user.uid).set(userToSave);
   };
+  // --------------- estrenos ---------------
   
-  $('#btn-estreno').on('click', function() {
-    firebase.database().ref('estrenos').on('value', function(snapshot) {
-      console.log(snapshot.val()[0].Title);
-      var a = Object.keys(snapshot.val());
-      var b = a.length;
-      for (var i = 0; i < b; i++) {
-        var poster = snapshot.val()[i]['Poster'];
-        // console.log(snapshot.val()[i]['Title']);
-        // $('.peliculas').append('<img src="' + poster + '">');
-        var $imgMovies = '<img  class="img-movies" src="' + poster + '">';
-        $('.peliculas').append('<div class="div-movies">' + $imgMovies + '</div>');
-      }
-    });
+  firebase.database().ref('estrenos').on('value', function(snapshot) {
+    console.log(snapshot.val()[0].Title);
+    var keysEstrenos = Object.keys(snapshot.val());
+    var estrenosLength = keysEstrenos.length;
+    var randomNumber = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterEstreno = snapshot.val()[randomNumber]['Poster'];
+    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay img-first" src="' + posterEstreno + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterEstreno = snapshot.val()[randomNumber]['Poster'];
+    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterEstreno + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterEstreno = snapshot.val()[randomNumber]['Poster'];
+    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterEstreno + '" alt=""> </div>');
   });
   // ----------- imagenes oscars -----------
   
@@ -52,13 +53,15 @@ $(document).ready(function() {
     console.log(snapshot.val()[0].Title);
     var keysOscars = Object.keys(snapshot.val());
     var oscarsLength = keysOscars.length;
-    for (var i = 0; i < oscarsLength; i++) {
-      var posterOscar = snapshot.val()[i]['Poster'];
-      // console.log(snapshot.val()[i]['Title']);
-      // $('.peliculas').append('<img src="' + poster + '">');
-      // '<img  class="img-autoplay" src="' + posterOscar + '">';
-      $('.slider-nav').append('<div data-toggle="modal" data-target="#myModal"><img src="' + posterOscar + '" alt=""></div>');
-    }
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay img-oscar-first" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
   });
    
   // --------- imagenes las mas premiadas ----------
@@ -97,20 +100,10 @@ $(document).ready(function() {
         });
     });*/
   // -------------------------------------------------------------
-  $('.slider-for').slick({
-    slidesToShow: 1,
+  $('.autoplay').slick({
+    slidesToShow: 3,
     slidesToScroll: 1,
-    fade: true,
-    asNavFor: '.slider-nav'
-  });
-  $('.slider-nav').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.slider-for',
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true,
-    initialSlide: 2,
-    arrows: true
+    autoplay: true,
+    autoplaySpeed: 2000,
   });
 });

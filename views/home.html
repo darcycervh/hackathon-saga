@@ -16,7 +16,7 @@
   <!-- css de la vista search -->
   <link rel="stylesheet" href="../css/home.css">
 </head>
-<body class="color-text-body">
+<body class="color-text-body"> 
  <!-- Barra de navegación -->
  <div class="container-fluid">
     <nav class="navbar navbar-default navbar-fixed-top navbar-collapse nav-dark" role="navigation">
@@ -81,20 +81,13 @@
   </div>
   <hr>
   <!-- sección de películas -->
-  <p class="titles m-l white peliculas">Estrenos: </p>
-    
-  <div class="slider-nav">
-    <!--<div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=1" alt=""></div>
-    <div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=2" alt=""></div>
-    <div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=3" alt=""></div>
-    <div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=4" alt=""></div>
-    <div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=5" alt=""></div>
-    <div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=6" alt=""></div>
-    <div data-toggle="modal" data-target="#myModal"><img src="http://placehold.it/390x245&text=7" alt=""></div>-->
-  </div>
-    
+  <p class="titles m-l white estrenos">Estrenos: </p>
+  <div class="slider-nav" id="estrenos"></div>
+  
+  <p class="titles m-l white peliculas">Las más premiadas: </p>
+  <div class="slider-nav" id="autoplay"></div>
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <!--  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -115,7 +108,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
       
   <!-- Js de Jquery-->
