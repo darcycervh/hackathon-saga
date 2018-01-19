@@ -1,7 +1,7 @@
 $(document).ready(function() {
   firebase.database().ref('sagas').on('value', function(snap) {
     var arrLength = snap.val().length;
-    console.log(snap.val()[0]['Title']);
+
 
     // Cargamos la data del usuario 
 

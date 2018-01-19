@@ -1,5 +1,18 @@
 $(document).ready(function () {
+  ////////////////////////
+  firebase.database().ref('sagas').on('value', function(snap) {
+    var arrLength = snap.val().length;
 
+
+    // Cargamos la data del usuario 
+
+    
+    for (i = 0;i < arrLength;i++) {
+      var $option = $('<option value="' + snap.val()[i]['Title'] + '"></option>');  
+      $('#list-movies').append($option);
+    }
+  });
+  ////////////////
 
   var omdbUrl = 'http://www.omdbapi.com/';
   // http://www.omdbapi.com/?apikey=6cb21a7d&t=star&plot=full
