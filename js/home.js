@@ -90,7 +90,7 @@ $(document).ready(function() {
     var oscarsLength = keysOscars.length;
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
-    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay column" src="' + posterOscar + '" alt=""> </div>');
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
     $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');

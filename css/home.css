@@ -71,7 +71,23 @@ div.modal-content{
 .modal-in{
     height: 30vh;
 }
-
+div.outline{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: auto;
+    width: 55vh !important;
+}
+p.titles{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: auto;
+    width: 30vh !important;
+}
+.column{
+    flex-flow: column;
+}
 /* */
 .slider-nav img {
     max-width: 100%;
