@@ -1,11 +1,7 @@
 $(document).ready(function() {
-  // alert('hola');
+  
   var provider = new firebase.auth.GoogleAuthProvider();
-  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  // firebase.auth().signInWithPopup(provider).then(function(result) {
-  /* var token = result.credential.accessToken;
-        var user = result.user;*/
-  // });
+
   $('#btn-hola').on('click', function() {
     // alert('hola');
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -112,5 +108,12 @@ $(document).ready(function() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+  });
+  // -------------------------------------
+  firebase.database().ref('perfil').on('value', function(snapshot) {
+    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences);
+    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[0]);
+    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[1]);
+    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[2]);
   });
 });
