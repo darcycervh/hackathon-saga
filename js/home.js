@@ -50,10 +50,6 @@ $(document).ready(function() {
       $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="">');
       $('#modal').modal('show');
     });
-
-
-    // $('#modal-data').append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
-    // $('#modal').modal('show');
   });    
 
 
@@ -61,24 +57,23 @@ $(document).ready(function() {
   
   firebase.database().ref('oscar').on('value', function(snapshot) {
     console.log(snapshot.val()[0].Title);
-    var keysOscars = Object.keys(snapshot.val());
-    var oscarsLength = keysOscars.length;
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var keys = Object.keys(snapshot.val());
+    var oscar = keys.length;
+  
+
+    for (i = 0;i < 3;i++) {
+      var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+      var poster = snapshot.val()[random]['Poster'];
+      $('#autoplay').append('<div data-toggle="modal" data-target="#myModal2"> <img class="img-autoplay" src="' + poster + '" alt=""> </div>');
+    }
       
-    // console.log(snapshot.val()[i]['Title']);
-    // $('.peliculas').append('<img src="' + poster + '">');
-    // '<img  class="img-autoplay" src="' + posterOscar + '">';
-      
-    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
-  });
+    $('.img-autoplay').on('click', function() {
+      console.log();
+      $('#modal-data').empty();
+      $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="">');
+      $('#modal').modal('show').css('position', 'absolute');
+    });
+  });    
    
   // --------- imagenes las mas premiadas ----------
   firebase.database().ref('estrenos').on('value', function(snapshot) {
