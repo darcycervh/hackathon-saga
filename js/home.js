@@ -127,18 +127,16 @@ $(document).ready(function() {
   // mis colecciones !!!!!!!!
   firebase.database().ref('genero').on('value', function(snapshot) {
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var supenseImg = snapshot.val().Suspenso[random].Poster;
-    var dramaImg = snapshot.val().Drama[random].Poster;
-    var accionImg = snapshot.val().Accion[random].Poster;
+    var supenseImg = snapshot.val().Suspenso[0].Poster;
+    var dramaImg = snapshot.val().Drama[0].Poster;
+    var accionImg = snapshot.val().Accion[0].Poster;
     // var keysOscars = Object.keys(snapshot.val());
     // var oscarsLength = keysOscars.length;
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay column" src="' + supenseImg + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+
+    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"><img class="img-autoplay column" src="' + supenseImg + '" alt=""></div>');
+
+    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"><img class="img-autoplay" src="' + dramaImg + '" alt=""></div>');
+
+    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"><img class="img-autoplay" src="' + accionImg + '" alt=""></div>');
   });
 });
