@@ -52,3 +52,16 @@ body{
     width: 100% !important;
     height: 30vh !important;
 }
+/* */
+.img-movies{
+    width: 15vh;
+    height: 20vh;
+    display: flex;
+    flex-flow: row;
+    margin-right: 0 !important;
+    display: inline-block;
+}
+.div-movies{
+    outline: 2px solid black;
+    display: inline-block
+}
