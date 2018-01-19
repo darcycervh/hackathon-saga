@@ -20,7 +20,7 @@ $('#generos').append('<li>-'+snap.val()['preferences'][i]+'</li>')
 
   // $('#condiciones:checked').val();
 
-  $('.btn-save').click(function() {
+  $('#btn-save').click(function() {
     console.log('holi');
     var arrPreferences = [];
     
