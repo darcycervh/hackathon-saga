@@ -4,7 +4,7 @@ $(document).ready(function() {
   firebase.database().ref('users/' + UID).on('value', function(snap) {
     
     $('#txt-edit-name').attr('value', snap.val()['name']);
-    //$('#txt-edit-email').attr('value', snap.val()['email']);
+    $('#img-user').attr('src', snap.val()['photo']);
   });
 
 
