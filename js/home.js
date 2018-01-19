@@ -70,16 +70,8 @@ $(document).ready(function() {
     $('.img-autoplay').on('click', function() {
       console.log();
       $('#modal-data').empty();
-      $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="">');
-      $('#modal').modal('show').css({
-        position: 'absolute',
-        width: '25vh',
-        height: '20vh',
-        display: 'flex',
-        justifyContent: 'center',
-        margin: 'auto',
-        overflow: 'hidden'
-      });
+      $('#modal-data').append('<div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><img class="img-autoplay" src="' + $(this).attr('src') + '" alt="">');
+      $('#modal').modal('show').addClass('imagenes-movies');
     });
   });    
    
@@ -97,14 +89,8 @@ $(document).ready(function() {
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
     $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-      
-    // console.log(snapshot.val()[i]['Title']);
-    // $('.peliculas').append('<img src="' + poster + '">');
-    // '<img  class="img-autoplay" src="' + posterOscar + '">';
-      
-    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
   });  
-  // --------------- imagenes para mis colecciones-------------
+  // ------- imagenes para mis colecciones--------
 
   firebase.database().ref('estrenos').on('value', function(snapshot) {
     console.log(snapshot.val()[0].Title);
@@ -119,21 +105,8 @@ $(document).ready(function() {
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
     $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-      
-    // console.log(snapshot.val()[i]['Title']);
-    // $('.peliculas').append('<img src="' + poster + '">');
-    // '<img  class="img-autoplay" src="' + posterOscar + '">';
-      
-    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
   });
-
-
-  /* $('#btn-user').on('click', function() {
-        firebase.database().ref('users.uid').on('value',function(snapshot){
-            console.log('snapshot');
-        });
-    });*/
-  // -------------------------------------------------------------
+  // ------------------------------------
   $('.autoplay').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
