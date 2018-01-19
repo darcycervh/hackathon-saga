@@ -193,3 +193,31 @@ img{
       }
     }
   }
+  @media (min-width: 500px) {
+    .img-autoplay{
+        width: 40vh;
+        height: 50vh;
+        display: flex;
+        flex-flow: row !important;
+        margin-right: 2rem !important; 
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        float: left;
+    }
+    div.outline{
+        width: 65% !important;
+    }
+    .imagenes-movies{
+        position: absolute;
+        width: 50vh;
+        height: 63vh;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        overflow: hidden;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 5%;
+    }
+  }
