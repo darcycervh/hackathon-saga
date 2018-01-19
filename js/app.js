@@ -2,6 +2,6 @@ $(document).ready(function() {
   $('.slider').slider();
 
   setTimeout(function() {
-    window.location.href = '../hackathon-saga/views/login.html';
-  }, 22000);
+    window.location.href = 'views/login.html';
+  }, 5000);
 });
