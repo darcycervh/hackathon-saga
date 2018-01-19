@@ -90,8 +90,8 @@ p.titles{
 }
 .imagenes-movies{
     position: absolute;
-    width: 20vh;
-    height: 33vh;
+    width: 40vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     margin: auto;
