@@ -80,11 +80,7 @@ body{
     margin-top: 4vh ;
 }
 
-.outline{
-    outline: solid 1px red;
+.navbar-toggle{
+    color:  #EDEECD ;
 }
 
-.help{
-   margin: auto;
-    
-}
