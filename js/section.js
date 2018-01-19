@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  
   var provider = new firebase.auth.GoogleAuthProvider();
 
   $('#btn-hola').on('click', function() {
@@ -69,6 +68,7 @@ $(document).ready(function() {
       $('#modal-title').empty();
       $('#modal-title').html($(this).attr('alt'));
       $('#modal-data').append('<div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');
+      
 
       $('#modal').modal('show').addClass('imagenes-movies');
     });
@@ -83,16 +83,16 @@ $(document).ready(function() {
     var posterOscar = snapshot.val()[random]['Poster'];
     var title = snapshot.val()[random]['Title'];
     console.log(title);
-    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal" data-title="titulo"> <img class="img-autoplay column" alt="titulo" src="' + posterOscar + '"></div><div></div>');
+    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal" data-title="titulo"> <img class="img-autoplay column" alt="' + snapshot.val()[random]['Title'] + '" src="' + posterOscar + '"></div><div></div>');
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
     $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"></div>');
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
-    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"></div>');
+    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" alt="' + snapshot.val()[random]['Title'] + '"src="' + posterOscar + '"</div>');
   });  
   // ------- imagenes para mis colecciones--------
-/*
+  /*
   firebase.database().ref('estrenos').on('value', function(snapshot) {
     console.log(snapshot.val()[0].Title);
     var keysOscars = Object.keys(snapshot.val());
@@ -125,18 +125,23 @@ $(document).ready(function() {
     var action = snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[2];
   });
   // mis colecciones !!!!!!!!
-  firebase.database().ref('genero').on('value', function(snapshot) {
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var supenseImg = snapshot.val().Suspenso[0].Poster;
-    var dramaImg = snapshot.val().Drama[0].Poster;
-    var accionImg = snapshot.val().Accion[0].Poster;
-    // var keysOscars = Object.keys(snapshot.val());
-    // var oscarsLength = keysOscars.length;
+  firebase.database().ref('estrenos').on('value', function(snapshot) {
+    // console.log(snapshot.val()[0].Title);
+    var keysOscars = Object.keys(snapshot.val());
+    var oscarsLength = keysOscars.length;
+  
 
-    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"><img class="img-autoplay column" src="' + supenseImg + '" alt=""></div>');
-
-    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"><img class="img-autoplay" src="' + dramaImg + '" alt=""></div>');
-
-    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"><img class="img-autoplay" src="' + accionImg + '" alt=""></div>');
-  });
+    for (i = 0;i < 3;i++) {
+      var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+      var posterOscar = snapshot.val()[random]['Poster'];
+      $('#colecciones').append('<div data-toggle="modal" data-target="#myModal1"> <img class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"></div>');
+    }
+      
+    $('.img-autoplay').on('click', function() {
+      console.log();
+      $('#modal-data').empty();
+      $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');
+      $('#modal').modal('show');
+    });
+  });    
 });
