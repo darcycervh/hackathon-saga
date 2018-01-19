@@ -63,11 +63,10 @@ body{
 }
 img{
     float: left;
-    margin-bottom: 1.5rem;
 }
-.img-first, .img-oscar-first{
-    margin-left: 1rem;
-}
+
+
+
 /* */
 .slider-nav img {
     max-width: 100%;

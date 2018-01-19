@@ -32,21 +32,27 @@ $(document).ready(function() {
     firebase.database().ref('users/' + user.uid).set(userToSave);
   };
   // --------------- estrenos ---------------
-  
   firebase.database().ref('estrenos').on('value', function(snapshot) {
     console.log(snapshot.val()[0].Title);
-    var keysEstrenos = Object.keys(snapshot.val());
-    var estrenosLength = keysEstrenos.length;
-    var randomNumber = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterEstreno = snapshot.val()[randomNumber]['Poster'];
-    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay img-first" src="' + posterEstreno + '" alt=""> </div>');
+    var keysOscars = Object.keys(snapshot.val());
+    var oscarsLength = keysOscars.length;
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterEstreno = snapshot.val()[randomNumber]['Poster'];
-    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterEstreno + '" alt=""> </div>');
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterEstreno = snapshot.val()[randomNumber]['Poster'];
-    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterEstreno + '" alt=""> </div>');
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+      
+    // console.log(snapshot.val()[i]['Title']);
+    // $('.peliculas').append('<img src="' + poster + '">');
+    // '<img  class="img-autoplay" src="' + posterOscar + '">';
+      
+    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
   });
+
   // ----------- imagenes oscars -----------
   
   firebase.database().ref('oscar').on('value', function(snapshot) {
@@ -55,45 +61,67 @@ $(document).ready(function() {
     var oscarsLength = keysOscars.length;
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
-    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay img-oscar-first" src="' + posterOscar + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
     $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
     var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
     var posterOscar = snapshot.val()[random]['Poster'];
     $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#autoplay').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+      
+    // console.log(snapshot.val()[i]['Title']);
+    // $('.peliculas').append('<img src="' + poster + '">');
+    // '<img  class="img-autoplay" src="' + posterOscar + '">';
+      
+    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
   });
    
   // --------- imagenes las mas premiadas ----------
-  $('#btn-oscars').on('click', function() {
-    firebase.database().ref('oscar').on('value', function(snapshot) {
-      console.log(snapshot.val()[0].Title);
-      var keysOscars = Object.keys(snapshot.val());
-      var oscarsLength = keysOscars.length;
-      for (var i = 0; i < oscarsLength; i++) {
-        var posterOscar = snapshot.val()[i]['Poster'];
-        // console.log(snapshot.val()[i]['Title']);
-        // $('.peliculas').append('<img src="' + poster + '">');
-        var $imgMoviesOscars = '<img  class="img-movies" src="' + posterOscar + '">';
-        $('.peliculas').append('<div class="div-movies">' + $imgMoviesOscars + '</div>');
-      }
-    });
-  });
+  firebase.database().ref('estrenos').on('value', function(snapshot) {
+    console.log(snapshot.val()[0].Title);
+    var keysOscars = Object.keys(snapshot.val());
+    var oscarsLength = keysOscars.length;
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#recomendadas').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+      
+    // console.log(snapshot.val()[i]['Title']);
+    // $('.peliculas').append('<img src="' + poster + '">');
+    // '<img  class="img-autoplay" src="' + posterOscar + '">';
+      
+    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
+  });  
   // --------------- imagenes para mis colecciones-------------
-  $('#btn-oscars').on('click', function() {
-    firebase.database().ref('oscar').on('value', function(snapshot) {
-      console.log(snapshot.val()[0].Title);
-      var keysOscars = Object.keys(snapshot.val());
-      var oscarsLength = keysOscars.length;
-      for (var i = 0; i < oscarsLength; i++) {
-        var posterOscar = snapshot.val()[i]['Poster'];
-        // console.log(snapshot.val()[i]['Title']);
-        // $('.peliculas').append('<img src="' + poster + '">');
-        var $imgMoviesOscars = '<img  class="img-movies" src="' + posterOscar + '">';
-        $('.peliculas').append('<div class="div-movies">' + $imgMoviesOscars + '</div>');
-      }
-    });
+
+  firebase.database().ref('estrenos').on('value', function(snapshot) {
+    console.log(snapshot.val()[0].Title);
+    var keysOscars = Object.keys(snapshot.val());
+    var oscarsLength = keysOscars.length;
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+    var posterOscar = snapshot.val()[random]['Poster'];
+    $('#colecciones').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+      
+    // console.log(snapshot.val()[i]['Title']);
+    // $('.peliculas').append('<img src="' + poster + '">');
+    // '<img  class="img-autoplay" src="' + posterOscar + '">';
+      
+    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
   });
+
+
+
   /* $('#btn-user').on('click', function() {
         firebase.database().ref('users.uid').on('value',function(snapshot){
             console.log('snapshot');
