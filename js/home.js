@@ -48,6 +48,21 @@ $(document).ready(function() {
         }
       });
     });
+    // ----------- imagenes oscars -----------
+    $('#btn-oscars').on('click', function() {
+      firebase.database().ref('oscar').on('value', function(snapshot) {
+        console.log(snapshot.val()[0].Title);
+        var keysOscars = Object.keys(snapshot.val());
+        var oscarsLength = keysOscars.length;
+        for (var i = 0; i < oscarsLength; i++) {
+          var posterOscar = snapshot.val()[i]['Poster'];
+          // console.log(snapshot.val()[i]['Title']);
+          // $('.peliculas').append('<img src="' + poster + '">');
+          var $imgMoviesOscars = '<img  class="img-movies" src="' + posterOscar + '">';
+          $('.peliculas').append('<div class="div-movies">' + $imgMoviesOscars + '</div>');
+        }
+      });
+    });
     /* $('#btn-user').on('click', function() {
         firebase.database().ref('users.uid').on('value',function(snapshot){
             console.log('snapshot');

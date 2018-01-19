@@ -60,8 +60,15 @@ body{
     flex-flow: row;
     margin-right: 0 !important;
     display: inline-block;
+    justify-content: center !important;
+    margin: auto;
 }
 .div-movies{
     outline: 2px solid black;
-    display: inline-block
+    display: inline-block;
+    display: flex;
+    flex-flow: row;
+    display: inline-block;
+    justify-content: center !important;
+    margin: auto;
 }
