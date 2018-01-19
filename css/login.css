@@ -49,6 +49,14 @@ body{
 .m-b{
   margin-bottom: 1vh !important;
 }
+.btn-login{
+width: auto;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+align-items:center;
+
+}
 .user-presentation{
   display: flex !important;
   flex-flow: column !important;
