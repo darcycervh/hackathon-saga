@@ -81,26 +81,26 @@
   </div>
   <hr>
   <!-- sección del perfil -->
-  <h4 class="text-m">Mi Perfil</h4>
+  <h4 class="text-center">Mi Perfil</h4>
   <div class="container">
     <div class="user-presentation">
-      <i class="fa fa-user-circle-o m-b" id="photo-user" aria-hidden="true"></i>
+      <i class="fa fa-user-circle-o m-b" id="photo-user" class="photo-user" aria-hidden="true"></i>
       <button class="btn btn-warning rounded m-b">Subir foto</button>
-      <span id="username" class="m-b">Username</span>
+      
       </div>
   </div>
   <div class="container">
-    <div >
-      <p class="mr-1">Nombre de usuario: <span></span></p><input type="text" name="" id="" class="w-50 rounded">
+    <div class="text-center">
+      <p class="text-center">Nombre de usuario: <span></span></p><input type="text" name="" id="" class="w-50 rounded" readonly>
     </div>
-    <p>Géneros favoritos:</p>
-    <div id="form" class="form">
-    <form  id="form-h" class="form-h">
-      <div class="form-check">
+    <p class="text-center">Géneros favoritos:</p>
+    <div id="form" class="form ">
+    <form  id="form-h" class="form-h  outline">
+      <div class="form-check  help ">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Terror</label>
       </div>
-      <div class="form-check">
+      <div class="form-check ">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Ficción</label>
       </div>
@@ -121,7 +121,7 @@
           <label class="form-check-label" for="exampleCheck1">Aventura</label>
         </div>
     </form >
-    <form id="form-h2" class="form-h2">
+    <form id="form-h2" class="form-h2 outline">
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Suspenso</label>
@@ -146,16 +146,12 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Animación</label>
           </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Otros:</label>
-            <input type="text" name="" id="input-others" class="input-others">
-          </div>
+          
       </form>
   </div>
 </div>
 </div>
-  <div class="container ">
+  <div class="container">
     <button id="btn-save" class="btn-save">Guardar cambios</button>
   </div>
   <!-- Bootstrap js -->

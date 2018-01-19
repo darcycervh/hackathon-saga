@@ -31,53 +31,60 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 .white{
-    color: #EDEECD !important;
+    color: #EDEECD !important ;
 }
 .fa{
     font-size: 1.5em;
 }
 /* user */
-#photo-user{
+.photo-user{
     font-size: 3em;
 }
 .icon-user{
     right: 2%;
 }
-.text-m{
-    margin-left: 3vh !important;
-}
+
 .m-b{
-    margin-bottom: 1vh !important;
+    margin-bottom: 1vh ;
 }
 .user-presentation{
-    display: flex !important;
-    flex-flow: column !important;
-    margin: auto !important;
+    display: flex ;
+    flex-flow: column ;
+    margin: auto ;
     width: 50%;
-    text-align: center !important;
+    text-align: center ;
 }
 .form-h, .form-h2 {
-    width: 45% !important;
-    display: inline-block !important;
+    width: 45% ;
+    display: inline-block;
 }
 .form{
-    display: flex !important;
-    flex-flow: row !important;
-    margin: auto !important;
-    justify-content: center !important;
+    display: flex ;
+    flex-flow: row ;
+    margin: auto ;
+    justify-content: center ;
 }
 .input-others{
-    width: 10vh !important;
+    width: 10vh;
 }
 .btn-save{
-    width: 25vh !important;
-    background-color: goldenrod !important; 
+    width: 25vh;
+    background-color: goldenrod ; 
     border-radius: 5%;
-    display: flex !important;
-    flex-flow: row !important;
-    margin: auto !important;
-    justify-content: center !important;
+    display: flex ;
+    flex-flow: row ;
+    margin: auto ;
+    justify-content: center ;
     padding: 1vh;
-    border: none !important;
-    margin-top: 4vh !important;
+    border: none ;
+    margin-top: 4vh ;
+}
+
+.outline{
+    outline: solid 1px red;
+}
+
+.help{
+   margin: auto;
+    
 }
