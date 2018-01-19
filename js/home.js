@@ -111,9 +111,17 @@ $(document).ready(function() {
   });
   // -------------------------------------
   firebase.database().ref('perfil').on('value', function(snapshot) {
-    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences);
+    /* console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences);
     console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[0]);
     console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[1]);
-    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[2]);
+    console.log(snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[2]);*/
+    var suspense = snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[0];
+    var drama = snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[1];
+    var action = snapshot.val()['06afMdYxxPPg7DKm3t6o1gwPhxI2'].preferences[2];
+  });
+  firebase.database().ref('genero').on('value', function(snapshot) {
+    var supenseImg = snapshot.val().Suspenso[0].Poster;
+    var dramaImg = snapshot.val().Drama[0].Poster;
+    var accionImg = snapshot.val().Accion[0].Poster;
   });
 });
