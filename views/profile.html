@@ -76,7 +76,7 @@
   <!-- Input de búsqueda de películas de saga -->
   <div class="container form-nav ">
     <div class="  input-group mb-3">
-        <button id="btn-save" class="btn-save">Busca tu saga</button>
+        <a href="####"><button id="btn-save" class="btn-save">Busca tu saga</button></a>
     </div>
   </div>
   <hr>
@@ -92,7 +92,7 @@
   </div>
   <div class="container">
     <div class="text-center ">
-      <p class="text-center">Nombre de usuario: <span></span></p><input type="text" name="" id="" class="rounded" readonly>
+      <p class="text-center">Nombre de usuario: <span></span></p><input type="text" name="" id="txt-edit-name" class="rounded" readonly>
     </div>
     <p class="text-center">Géneros favoritos:</p>
     <div id="form" class="form ">
@@ -155,14 +155,16 @@
   <div class="container">
     <button id="btn-save" class="btn-save">Guardar cambios</button>
   </div>
-  <!-- Bootstrap js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>  
-  <!-- adjuntando js de la vista profile -->
-  <script src="../js/profile.js"></script>
+
+
+  <!-- Js de firebase-->
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script type="text/javascript" src="../js/connect.js"></script>
+<!-- Js de Jquery-->
+<script type="text/javascript" src="../vendors/js/jquery-3.2.1.min.js"></script>
+<!-- Js de bootstrap-->
+<script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+<!-- Js para la página-->
+<script type="text/javascript" src="../js/profile.js"></script>
 </body>
 </html>
