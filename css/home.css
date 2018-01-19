@@ -52,20 +52,16 @@ body{
     width: 100% !important;
     height: 30vh !important;
 }
-/* */
-.img-movies{
+/* img carrusel */
+.img-autoplay{
+    margin-right: 1rem;
     width: 15vh;
     height: 20vh;
-    display: flex;
-    flex-flow: row;
-    margin-right: 0 !important;
     display: inline-block;
-    justify-content: center !important;
-    margin: auto;
 }
+/* */
 .div-movies{
     outline: 2px solid black;
-    display: inline-block;
     display: flex;
     flex-flow: row;
     display: inline-block;
