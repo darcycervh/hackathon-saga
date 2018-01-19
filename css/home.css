@@ -64,8 +64,13 @@ body{
 img{
     float: left;
 }
-
-
+div.modal-content{
+    height: 30vh;
+    width: auto;
+}
+.modal-in{
+    height: 30vh;
+}
 
 /* */
 .slider-nav img {

@@ -71,7 +71,15 @@ $(document).ready(function() {
       console.log();
       $('#modal-data').empty();
       $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="">');
-      $('#modal').modal('show').css('position', 'absolute');
+      $('#modal').modal('show').css({
+        position: 'absolute',
+        width: '25vh',
+        height: '20vh',
+        display: 'flex',
+        justifyContent: 'center',
+        margin: 'auto',
+        overflow: 'hidden'
+      });
     });
   });    
    
