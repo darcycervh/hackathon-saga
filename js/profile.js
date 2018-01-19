@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var UID = '06afMdYxxPPg7DKm3t6o1gwPhxI2'; // Por cambiar a una variable
+  var UID = window.localStorage.getItem('storageUID'); // Por cambiar a una variable
 
   firebase.database().ref('users/' + UID).on('value', function(snap) {
     // Cargamos la data del usuario 
