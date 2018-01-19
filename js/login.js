@@ -1,17 +1,4 @@
 $(document).ready(function () {
-  // Initialize Firebase
-  var config = {
-    apiKey: 'AIzaSyDznM8Mqcy71m6eKWW-azdW_UI-k8_UzcE',
-    authDomain: 'search-saga.firebaseapp.com',
-    databaseURL: 'https://search-saga.firebaseio.com',
-    projectId: 'search-saga',
-    storageBucket: '',
-    messagingSenderId: '246540562791'
-  };
-  firebase.initializeApp(config);
-
-  $(document).ready(function () {
-
     var $loginEmail = $('#email-login');
     var $email = $('#email');
     var $password = $('#password');
@@ -49,4 +36,4 @@ $(document).ready(function () {
     }
 
   });
-});
+
