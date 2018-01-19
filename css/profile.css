@@ -56,20 +56,20 @@ body{
     width: 50%;
     text-align: center !important;
 }
-#form-h, #form-h2 {
+.form-h, .form-h2 {
     width: 45% !important;
     display: inline-block !important;
 }
-#form{
+.form{
     display: flex !important;
     flex-flow: row !important;
     margin: auto !important;
     justify-content: center !important;
 }
-#input-others{
+.input-others{
     width: 10vh !important;
 }
-#btn-save{
+.btn-save{
     width: 25vh !important;
     background-color: goldenrod !important; 
     border-radius: 5%;
