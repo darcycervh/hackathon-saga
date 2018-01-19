@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  UID = '06afMdYxxPPg7DKm3t6o1gwPhxI2'; // Por cambiar a una variable
+  var UID = '06afMdYxxPPg7DKm3t6o1gwPhxI2'; // Por cambiar a una variable
 
   firebase.database().ref('users/' + UID).on('value', function(snap) {
     // Cargamos la data del usuario 
@@ -7,11 +7,23 @@ $(document).ready(function() {
     $('#img-user').attr('src', snap.val()['photo']);
   });
 
+  firebase.database().ref('perfil/' + UID).on('value', function(snap) {
+    
+    console.log(snap.val()['preferences']);
+    // Cargamos la data del usuario 
+    for(i=0;i<snap.val()['preferences'].length;i++) {
+$('#generos').append('<li>-'+snap.val()['preferences'][i]+'</li>')
+    }
+    
+    
+  });
+
   // $('#condiciones:checked').val();
 
   $('.btn-save').click(function() {
     console.log('holi');
     var arrPreferences = [];
+    
     // Actualizando el array preferencias
     if ($('#chk-terror').prop('checked')) {
       arrPreferences.push($('#chk-terror').val());
@@ -52,26 +64,22 @@ $(document).ready(function() {
     if ($('#chk-animacion').prop('checked')) {
       arrPreferences.push($('#chk-animacion').val());
     }
+    // Guardando los datos
     if (arrPreferences.length < 1) {
       alert('Por favor actualice sus géneros favoritos');
-    } else{
-     
+    } else {
       firebase.database().ref('perfil/' + UID).set(
         UID = {
           uid: UID,
-          preferences: arrPreferences
-              
-        
+          preferences: arrPreferences                   
         });
+      location.reload();
+
       alert('Datos guardados satisfactoriamente');
     }
 
     console.log(arrPreferences);
     
-    // Actualizando la data en firebase.....
-    // alert($('.form-check-input').attr('checked'));
-    // alert($('input[id="chk-terror"]:checked').val());
 
-    // if ($('input[id="chk-terror"]:checked'))
   });
 });
