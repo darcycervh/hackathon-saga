@@ -36,22 +36,26 @@ $(document).ready(function() {
     console.log(snapshot.val()[0].Title);
     var keysOscars = Object.keys(snapshot.val());
     var oscarsLength = keysOscars.length;
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
-    var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
-    var posterOscar = snapshot.val()[random]['Poster'];
-    $('#estrenos').append('<div data-toggle="modal" data-target="#myModal"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+  
+
+    for (i = 0;i < 3;i++) {
+      var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
+      var posterOscar = snapshot.val()[random]['Poster'];
+      $('#estrenos').append('<div data-toggle="modal" data-target="#myModal1"> <img class="img-autoplay" src="' + posterOscar + '" alt=""> </div>');
+    }
       
-    // console.log(snapshot.val()[i]['Title']);
-    // $('.peliculas').append('<img src="' + poster + '">');
-    // '<img  class="img-autoplay" src="' + posterOscar + '">';
-      
-    // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
-  });
+    $('.img-autoplay').on('click', function() {
+      console.log();
+      $('#modal-data').empty();
+      $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="">');
+      $('#modal').modal('show');
+    });
+
+
+    // $('#modal-data').append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
+    // $('#modal').modal('show');
+  });    
+
 
   // ----------- imagenes oscars -----------
   
@@ -119,7 +123,6 @@ $(document).ready(function() {
       
     // .append('<img class="img-autoplay" src="' + posterOscar + '" alt="">');
   });
-
 
 
   /* $('#btn-user').on('click', function() {
