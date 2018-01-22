@@ -71,6 +71,14 @@ img{
 .my-modal{
     background-color: #ffff;
 }
+div.outline{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 7%;
+}
 /*
 div.modal-content{
     height: 30vh;
@@ -79,13 +87,7 @@ div.modal-content{
 .modal-in{
     height: 30vh;
 }
-div.outline{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    margin: auto;
-    width: 55vh !important;
-}
+
 p.titles{
     display: flex;
     flex-flow: column;
@@ -214,7 +216,7 @@ img{
         float: left;
     }
     div.outline{
-        width: 65% !important;
+        width: 100%;
     }
     .imagenes-movies{
         position: absolute;
