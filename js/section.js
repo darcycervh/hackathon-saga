@@ -43,7 +43,7 @@ $(document).ready(function() {
       // $('#myModal').empty();
       /* $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');*/
       // var poster = snapshot.val()[random]['Poster'];
-      $('#estrenos').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title']+'</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
+      $('#estrenos').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title'] + '</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
       // $('#myModal').modal('show');
     }
   });    
@@ -61,7 +61,7 @@ $(document).ready(function() {
       var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
       var poster = snapshot.val()[random]['Poster'];
       $('#autoplay').append('<img id="my-image" class="img-autoplay" src="' + poster + '" alt="' + snapshot.val()[random]['Title'] + '"data-toggle="modal" data-target="#myModal">');
-      $('#autoplay').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title']+'</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
+      $('#autoplay').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title'] + '</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
     }
       
     /* $('.img-autoplay').on('click', function() {
