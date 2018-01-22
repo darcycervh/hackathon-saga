@@ -36,15 +36,16 @@ $(document).ready(function() {
     for (i = 0;i < 3;i++) {
       var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
       var posterOscar = snapshot.val()[random]['Poster'];
-      $('#estrenos').append('<div data-toggle="modal" data-target="#myModal1"> <img class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"></div>');
-    }
-      
-    $('.img-autoplay').on('click', function() {
+      /* $('#estrenos').append('<div data-toggle="modal" data-target="#myModal1"> <img class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"></div>'); */
+      $('#estrenos').append('<img id="my-image" class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"data-toggle="modal" data-target="#myModal">');
       console.log();
-      $('#modal-data').empty();
-      $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');
-      $('#modal').modal('show');
-    });
+      // $('#modal-data').empty();
+      // $('#myModal').empty();
+      /* $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');*/
+      // var poster = snapshot.val()[random]['Poster'];
+      $('#estrenos').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title']+'</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
+      // $('#myModal').modal('show');
+    }
   });    
 
 
@@ -59,19 +60,21 @@ $(document).ready(function() {
     for (i = 0;i < 3;i++) {
       var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
       var poster = snapshot.val()[random]['Poster'];
-      $('#autoplay').append('<div data-toggle="modal" data-target="#myModal2"> <img class="img-autoplay" src="' + poster + '" alt="' + snapshot.val()[random]['Title'] + '"></div>');
+      $('#autoplay').append('<img id="my-image" class="img-autoplay" src="' + poster + '" alt="' + snapshot.val()[random]['Title'] + '"data-toggle="modal" data-target="#myModal">');
+      $('#autoplay').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title']+'</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
     }
       
-    $('.img-autoplay').on('click', function() {
+    /* $('.img-autoplay').on('click', function() {
       // console.log();
       $('#modal-data').empty();
       $('#modal-title').empty();
       $('#modal-title').html($(this).attr('alt'));
-      $('#modal-data').append('<div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');
+      
+       $('#modal-data').append('<div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');
       
 
       $('#modal').modal('show').addClass('imagenes-movies');
-    });
+    });*/
   });    
    
   // --------- imagenes las mas premiadas ----------
@@ -134,14 +137,14 @@ $(document).ready(function() {
     for (i = 0;i < 3;i++) {
       var random = Math.floor(Math.random() * (20 - 0 + 1) + 0);
       var posterOscar = snapshot.val()[random]['Poster'];
-      $('#colecciones').append('<div data-toggle="modal" data-target="#myModal1"> <img class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"></div>');
+      $('#colecciones').append('<img id="my-image" class="img-autoplay" src="' + posterOscar + '" alt="' + snapshot.val()[random]['Title'] + '"data-toggle="modal" data-target="#myModal">');
     }
-      
-    $('.img-autoplay').on('click', function() {
+    $('#colecciones').append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog my-modal" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">' + snapshot.val()[random]['Title']+'</h4></div><div class="modal-body"><img class="img-autoplay" src="' + $(this).attr('src') + 'alt="' + snapshot.val()[random]['Title'] + '"></div><div class="modal-footer"><button type="button" class="btn btn-primary">Ver película</button></div></div></div></div>');
+    /* $('.img-autoplay').on('click', function() {
       console.log();
       $('#modal-data').empty();
       $('#modal-data').append('<img class="img-autoplay" src="' + $(this).attr('src') + '" alt="' + snapshot.val()[random]['Title'] + '">');
       $('#modal').modal('show');
-    });
+    });*/
   });    
 });

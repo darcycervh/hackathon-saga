@@ -63,7 +63,15 @@ body{
 }
 img{
     float: left;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden;
 }
+.my-modal{
+    background-color: #ffff;
+}
+/*
 div.modal-content{
     height: 30vh;
     width: auto;
@@ -108,7 +116,7 @@ img{
     justify-content: center;
     margin: auto;
     overflow: hidden;
-}
+}*/
 /* */
 .slider-nav img {
     max-width: 100%;
